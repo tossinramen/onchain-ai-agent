@@ -1,3 +1,5 @@
+import { getBalanceTool } from "./getBalance";
+
 export interface ToolConfig<T= any> {
     definition: {
         type: 'function';
@@ -16,4 +18,5 @@ export interface ToolConfig<T= any> {
 
 export const tools: Record<string, ToolConfig> = {
     // add more tools that openai assistant should be aware of 
+    get_balance : getBalanceTool
 };
