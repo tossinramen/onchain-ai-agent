@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import { createAssistant } from "./openai/createAssistant";
 import { createThread } from "./openai/createThread";
 import { createRun } from "./openai/createRun";
+import { performRun } from "./openai/performRun";
 
 
 async function main(){
@@ -10,7 +11,8 @@ async function main(){
     const assistant = await createAssistant(client);
     const thread = await createThread(client, message);
     const run = await createRun(client, thread, assistant.id);
-    console.log("Hello, world!")
+    const result = await performRun(run, client, thread);
+    console.log(result);
 }
 
 main();
