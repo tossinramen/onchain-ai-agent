@@ -11,4 +11,9 @@ export interface ToolConfig<T= any> {
             };
         };
     };
+    handler: (args: T) => Promise<any>;
 }
+
+export const tools: Record<string, ToolConfig> = {
+    // add more tools that openai assistant should be aware of 
+};

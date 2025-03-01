@@ -7,5 +7,5 @@ export async function createAssistant(client: OpenAI): Promise<Assistant> {
         name: "Luffy",
         instructions: `...`,
         tools: []
-    })
+    });
 }
