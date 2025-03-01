@@ -14,6 +14,16 @@ export async function performRun(run: Run, client: OpenAI, thread:Thread) {
             role: 'assistant',
             content: errorMessage
         });
-        
+        return {
+            type: 'text',
+            text: {
+                value: errorMessage, 
+                annotations: []
+            }
+        };
     }
+    const messages = await client.beta.threads.messages.list(thread.id);
+    const assistantMessage = messages.data.find(message => message.role === 'assistant');
+    return assistantMessage?.content[0] ||
+        { type: 'text', text: { value: 'No response from assistant', annotations: [] }};
 }
