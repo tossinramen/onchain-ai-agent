@@ -13,9 +13,11 @@ export async function handleRunToolCalls(run: Run, client: OpenAI, thread: Threa
                 console.error(`Tool ${tool.function.name} not found`);
                 return null;
             }
+            console.log(`Running tool ${tool.function.name}`);
             try{
                 const args = JSON.parse(tool.function.arguments); // get arguemtns requiered
                 const output = await toolConfig.handler(args);// run function for each iteration
+                console.log(`Tool ${tool.function.name} returned ${output}`);
                 return {
                     tool_call_id: tool.id,
                     output: String(output)

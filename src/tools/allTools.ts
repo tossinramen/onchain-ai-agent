@@ -1,5 +1,6 @@
 import { getBalanceTool } from "./getBalance";
 import { getWalletAddressTool } from "./getWalletAddress";
+import { sendTransactionTool } from "./sendTransaction";
 
 export interface ToolConfig<T= any> {
     definition: {
@@ -20,5 +21,6 @@ export interface ToolConfig<T= any> {
 export const tools: Record<string, ToolConfig> = {
     // add more tools that openai assistant should be aware of 
     get_balance : getBalanceTool,
-    get_wallet_address: getWalletAddressTool
+    get_wallet_address: getWalletAddressTool,
+    send_transaction: sendTransactionTool
 };
