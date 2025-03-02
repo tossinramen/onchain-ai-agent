@@ -18,7 +18,7 @@ export const getBalanceTool: ToolConfig<GetBalanceArgs> = {
                 properties: {
                     wallet: {
                         type: 'string',
-                        pattern: '^0[a-fA-F0-9]{40}$',
+                        pattern: '^0x[a-fA-F0-9]{40}$',
                         description: 'The wallet address to get the balance of',
                     }
                 },

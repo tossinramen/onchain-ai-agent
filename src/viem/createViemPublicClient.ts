@@ -4,7 +4,7 @@ export function createViemPublicClient() {
 
     return createPublicClient({ 
         chain: abstractTestnet,
-        transport: http()
+        transport: http(),
 });
 }
 
