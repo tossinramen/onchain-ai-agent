@@ -1,4 +1,4 @@
-# AI Assistant with OpenAI and Viem
+# ChainMind: AI Assistant with OpenAI and Viem
 
 This project is an AI assistant built using TypeScript, OpenAI's API, and Viem for interacting with Ethereum wallets. It supports multiple tools, allowing for dynamic question-answering and transaction handling.
 
